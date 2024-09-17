@@ -5,5 +5,9 @@
 @tailwind utilities;
 
 body {
-  @apply w-screen h-screen font-barlowSemiCondensed text-[0.8125rem];
+  @apply w-screen h-screen bg-light-grayish-blue font-barlowSemiCondensed text-[0.8125rem];
+}
+
+a {
+  @apply text-[#3e52a3];
 }
