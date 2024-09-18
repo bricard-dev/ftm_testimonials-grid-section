@@ -13,9 +13,9 @@ interface CardProps {
 }
 
 const colorMap: { [key: string]: string } = {
-  violet: 'moderate-violet',
-  gray: 'very-dark-grayish-blue',
-  black: 'very-dark-blackish-blue',
+  violet: 'bg-moderate-violet',
+  gray: 'bg-very-dark-grayish-blue',
+  black: 'bg-very-dark-blackish-blue',
 };
 
 export default function Card({
@@ -28,7 +28,7 @@ export default function Card({
   backgroundColor = 'white',
   avatarBorder = false,
 }: CardProps) {
-  const bgClass = `bg-${colorMap[backgroundColor] || 'white'}`;
+  const bgClass = colorMap[backgroundColor] || 'bg-white';
 
   return (
     <article
