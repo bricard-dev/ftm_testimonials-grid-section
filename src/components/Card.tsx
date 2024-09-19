@@ -10,6 +10,7 @@ interface CardProps {
   hasBackgroundQuote?: boolean;
   backgroundColor?: string;
   avatarBorder?: boolean;
+  className?: string;
 }
 
 const colorMap: { [key: string]: string } = {
@@ -27,23 +28,33 @@ export default function Card({
   hasBackgroundQuote = false,
   backgroundColor = 'white',
   avatarBorder = false,
+  className,
 }: CardProps) {
   const bgClass = colorMap[backgroundColor] || 'bg-white';
 
   return (
     <article
-      className={cn(`relative px-8 py-[26px] rounded-lg text-white`, bgClass, {
-        'text-very-dark-grayish-blue': backgroundColor === 'white',
-      })}
+      className={cn(
+        `relative px-8 py-[26px] rounded-lg text-white`,
+        className,
+        bgClass,
+        {
+          'text-very-dark-grayish-blue': backgroundColor === 'white',
+        }
+      )}
     >
       {/* Background image */}
       {hasBackgroundQuote && (
-        <img className="absolute top-0 right-6" src={bgPatternQuote} alt="" />
+        <img
+          className="absolute top-0 right-6 lg:right-20"
+          src={bgPatternQuote}
+          alt=""
+        />
       )}
       {/* Author */}
       <div
         className={cn('mb-[18px] flex items-center gap-[17px]', {
-          'mb-4': hasBackgroundQuote,
+          'mb-4 lg:mb-[18px]': hasBackgroundQuote,
         })}
       >
         <img
@@ -63,7 +74,7 @@ export default function Card({
       {/* Content */}
       <div
         className={cn('space-y-4 relative z-10', {
-          'space-y-10': hasBackgroundQuote,
+          'space-y-10 lg:space-y-4': hasBackgroundQuote,
         })}
       >
         <h2 className="z-10 font-semibold text-xl leading-[1.175]">

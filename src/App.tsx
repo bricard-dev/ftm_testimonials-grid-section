@@ -8,9 +8,9 @@ import Card from './components/Card';
 function App() {
   return (
     <>
-      <main className="pt-[71px] px-6">
+      <main className="pt-[71px] lg:pt-[164px] px-6 lg:px-0">
         <h1 className="hidden">Testimonials grid section</h1>
-        <div className="flex flex-col gap-6">
+        <div className="max-w-[1100px] w-full mx-auto grid lg:grid-cols-4 lg:grid-rows-2 gap-6 lg:gap-[30px]">
           <Card
             authorImg={danielImg}
             authorName="Daniel Clifford"
@@ -27,6 +27,7 @@ function App() {
             hasBackgroundQuote={true}
             backgroundColor="violet"
             avatarBorder={true}
+            className="lg:col-span-2"
           />
           <Card
             authorImg={jonathanImg}
@@ -60,6 +61,7 @@ function App() {
         people."
             backgroundColor="black"
             avatarBorder={true}
+            className="lg:col-span-2"
           />
           <Card
             authorImg={kiraImg}
@@ -77,6 +79,7 @@ function App() {
         during interviews as an example of my developent experience. It
         certainly helped me land a job as a full-stack developer after receiving
         multiple offers. 100% recommend!"
+            className="lg:row-start-1 lg:col-start-4 lg:row-span-2"
           />
         </div>
       </main>
